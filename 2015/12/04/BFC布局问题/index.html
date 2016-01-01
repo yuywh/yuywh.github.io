@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="css," />
 
 
 
@@ -44,26 +44,26 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=0.4.5.2" />
 
 
 
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="这个BFC格式化上下文应该算是我工作以来遇到的第一个因为CSS样式出现的问题，以下文章内容是有我搜集归纳整理而成(注：学习笔记)。BFC 定义:BFC(Block formatting context)直译为‘块级格式化上下文’。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。  
+BFC布局规则：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2015/12/31/hello-world/index.html">
-<meta property="og:site_name" content="YuYao">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2015-12-31T14:46:51.142Z">
+<meta property="og:title" content="BFC布局问题">
+<meta property="og:url" content="http://yoursite.com/2015/12/04/BFC布局问题/index.html">
+<meta property="og:site_name" content="YuYao'Blog">
+<meta property="og:description" content="这个BFC格式化上下文应该算是我工作以来遇到的第一个因为CSS样式出现的问题，以下文章内容是有我搜集归纳整理而成(注：学习笔记)。BFC 定义:BFC(Block formatting context)直译为‘块级格式化上下文’。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。  
+BFC布局规则：">
+<meta property="og:updated_time" content="2016-01-01T07:36:02.578Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="BFC布局问题">
+<meta name="twitter:description" content="这个BFC格式化上下文应该算是我工作以来遇到的第一个因为CSS样式出现的问题，以下文章内容是有我搜集归纳整理而成(注：学习笔记)。BFC 定义:BFC(Block formatting context)直译为‘块级格式化上下文’。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。  
+BFC布局规则：">
 
 
 
@@ -75,7 +75,7 @@ Quick">
   };
 </script>
 
-  <title> Hello World | YuYao </title>
+  <title> BFC布局问题 | YuYao'Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -106,7 +106,7 @@ Quick">
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">YuYao</span>
+      <span class="site-title">YuYao'Blog</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -138,26 +138,6 @@ Quick">
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -168,12 +148,32 @@ Quick">
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
               <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -215,7 +215,7 @@ Quick">
             
             
               
-                Hello World
+                BFC布局问题
               
             
           </h1>
@@ -224,14 +224,36 @@ Quick">
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-12-31T22:46:51+08:00" content="2015-12-31">
-              2015-12-31
+            <time itemprop="dateCreated" datetime="2015-12-04T13:54:26+08:00" content="2015-12-04">
+              2015-12-04
             </time>
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/04/BFC布局问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/04/BFC布局问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -248,22 +270,53 @@ Quick">
       
 
       
-        <span itemprop="articleBody"><p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <span itemprop="articleBody"><h3 id="u8FD9_u4E2ABFC_u683C_u5F0F_u5316_u4E0A_u4E0B_u6587_u5E94_u8BE5_u7B97_u662F_u6211_u5DE5_u4F5C_u4EE5_u6765_u9047_u5230_u7684_u7B2C_u4E00_u4E2A_u56E0_u4E3ACSS_u6837_u5F0F_u51FA_u73B0_u7684_u95EE_u9898_uFF0C_u4EE5_u4E0B_u6587_u7AE0_u5185_u5BB9_u662F_u6709_u6211_u641C_u96C6_u5F52_u7EB3_u6574_u7406_u800C_u6210_28_u6CE8_uFF1A_u5B66_u4E60_u7B14_u8BB0_29_u3002"><a href="#u8FD9_u4E2ABFC_u683C_u5F0F_u5316_u4E0A_u4E0B_u6587_u5E94_u8BE5_u7B97_u662F_u6211_u5DE5_u4F5C_u4EE5_u6765_u9047_u5230_u7684_u7B2C_u4E00_u4E2A_u56E0_u4E3ACSS_u6837_u5F0F_u51FA_u73B0_u7684_u95EE_u9898_uFF0C_u4EE5_u4E0B_u6587_u7AE0_u5185_u5BB9_u662F_u6709_u6211_u641C_u96C6_u5F52_u7EB3_u6574_u7406_u800C_u6210_28_u6CE8_uFF1A_u5B66_u4E60_u7B14_u8BB0_29_u3002" class="headerlink" title="这个BFC格式化上下文应该算是我工作以来遇到的第一个因为CSS样式出现的问题，以下文章内容是有我搜集归纳整理而成(注：学习笔记)。"></a>这个BFC格式化上下文应该算是我工作以来遇到的第一个因为CSS样式出现的问题，以下文章内容是有我搜集归纳整理而成(注：学习笔记)。</h3><h2 id="BFC__u5B9A_u4E49_3A"><a href="#BFC__u5B9A_u4E49_3A" class="headerlink" title="BFC 定义:"></a>BFC 定义:</h2><p>BFC(Block formatting context)直译为‘块级格式化上下文’。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。  </p>
+<h2 id="BFC_u5E03_u5C40_u89C4_u5219_uFF1A"><a href="#BFC_u5E03_u5C40_u89C4_u5219_uFF1A" class="headerlink" title="BFC布局规则："></a>BFC布局规则：</h2><p>内部的Box会在垂直方向，一个接一个地放置。<br>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠<br>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。<br>BFC的区域不会与float box重叠。<br>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。<br>计算BFC的高度时，浮动元素也参与计算.  </p>
+<h2 id="u54EA_u4E9B_u5143_u7D20_u4F1A_u751F_u6210BFC_3F"><a href="#u54EA_u4E9B_u5143_u7D20_u4F1A_u751F_u6210BFC_3F" class="headerlink" title="哪些元素会生成BFC?"></a>哪些元素会生成BFC?</h2><p>根元素<br>float属性不为none<br>position为absolute或fixed<br>display为inline-block, table-cell, table-caption, flex, inline-flex<br>overflow不为visible  </p>
+<h2 id="u89E3_u51B3_u65B9_u6848_uFF1A"><a href="#u89E3_u51B3_u65B9_u6848_uFF1A" class="headerlink" title="解决方案："></a>解决方案：</h2><p>利用 clear属性，清除浮动。使父容器形成BFC<br>使用CSS插入元素  </p>
+<p><code>.floatfix:after{  
+    content:&quot;.&quot;;   
+    display:block;  
+    height:0;   
+    visibility:hidden;  
+    clear:left;  
+}</code></p>
+<p>一个相对靠谱的解决方案:  </p>
+<p><code>.floatfix{  
+    *zoom:1;  
+}</code></p>
+<p><code>.floatfix:after{  
+    content:&quot;&quot;;  
+    display:table;  
+    clear:both;  
+}</code></p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag">#css</a>
+          
+        </div>
+      
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/18/text-overflow失效/" rel="prev" title="text-overflow失效">
+                text-overflow失效 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -286,6 +339,10 @@ Quick">
 
         
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/12/04/BFC布局问题/"
+           data-title="BFC布局问题" data-url="http://yoursite.com/2015/12/04/BFC布局问题/">
+      </div>
     
   </div>
 
@@ -324,25 +381,25 @@ Quick">
           <img class="site-author-image" src="/images/logo.png" alt="Yu Yao" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Yu Yao</p>
         </div>
-        <p class="site-description motion-element" itemprop="description"></p>
+        <p class="site-description motion-element" itemprop="description">YuYao'Blog 记录工作生活的点滴</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -353,12 +410,37 @@ Quick">
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yuyao1994" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> github
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://segmentfault.com/u/yuyao" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> segmentfault
+                  
+                </a>
+              </span>
+            
+          
         </div>
 
         
         
 
         <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Firend Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.evanyou.me/" target="_blank">尤小右</a>
+              </span>
+            
           
         </div>
 
@@ -374,7 +456,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick_Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create_a_new_post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run_server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate_static_files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy_to_remote_sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u8FD9_u4E2ABFC_u683C_u5F0F_u5316_u4E0A_u4E0B_u6587_u5E94_u8BE5_u7B97_u662F_u6211_u5DE5_u4F5C_u4EE5_u6765_u9047_u5230_u7684_u7B2C_u4E00_u4E2A_u56E0_u4E3ACSS_u6837_u5F0F_u51FA_u73B0_u7684_u95EE_u9898_uFF0C_u4EE5_u4E0B_u6587_u7AE0_u5185_u5BB9_u662F_u6709_u6211_u641C_u96C6_u5F52_u7EB3_u6574_u7406_u800C_u6210_28_u6CE8_uFF1A_u5B66_u4E60_u7B14_u8BB0_29_u3002"><span class="nav-number">1.</span> <span class="nav-text">这个BFC格式化上下文应该算是我工作以来遇到的第一个因为CSS样式出现的问题，以下文章内容是有我搜集归纳整理而成(注：学习笔记)。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFC__u5B9A_u4E49_3A"><span class="nav-number"></span> <span class="nav-text">BFC 定义:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFC_u5E03_u5C40_u89C4_u5219_uFF1A"><span class="nav-number"></span> <span class="nav-text">BFC布局规则：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u54EA_u4E9B_u5143_u7D20_u4F1A_u751F_u6210BFC_3F"><span class="nav-number"></span> <span class="nav-text">哪些元素会生成BFC?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u89E3_u51B3_u65B9_u6848_uFF1A"><span class="nav-number"></span> <span class="nav-text">解决方案：</span></a></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -394,8 +476,8 @@ Quick">
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2015</span>
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>
@@ -428,11 +510,28 @@ Quick">
 
   
     
-    
 
   
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yuyao"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
 
 
+    
   
 
   
